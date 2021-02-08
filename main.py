@@ -11,7 +11,7 @@ USER = {
         "last_updated": "7/2/2021, 12:50:00",
         "username": "James",
         "role": "Junior Engineer",
-        "color": "Grey"
+        "color": "#008080"
     }
 }
 
