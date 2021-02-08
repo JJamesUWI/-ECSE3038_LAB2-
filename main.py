@@ -5,19 +5,18 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
-USER = [
-    {
-        "success": True,
-        "data": {
-            "last_updated": "7/2/2021, 12:50:00",
-            "username": "James",
-            "role": "Junior Engineer",
-            "color": "Grey"
-        }
+USER = {
+    "success": True,
+    "data": {
+        "last_updated": "7/2/2021, 12:50:00",
+        "username": "James",
+        "role": "Junior Engineer",
+        "color": "Grey"
     }
-]
+}
 
-TANK = []
+
+TANK = {}
 id_count = 0
 
 
@@ -73,7 +72,7 @@ def get_data():
 def post_data():
     global id_count
     id_count += 1
-
+    t = {}
     t = request.json
     t["id"] = id_count
     TANK.append(t)
@@ -104,7 +103,7 @@ def delete_data(id):
 
 
 if __name__ == "__main__":
-    # app.run(
-    #   debug=True,
-    #   port=3000
-    # )
+    app.run(
+        debug=True,
+        port=3000
+    )
